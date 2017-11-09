@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tapingo Tweets</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/tweets.css') }}"/>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.png') }}"/>
+</head>
+<body>
+<div class="tweets">
+    <ul>
+        {% for item in tweets %}
+            <a href="{{ item.url }}" target="_blank" title="tweet">
+                <li>
+                    <img src="{{ item.image }}"/>
+                    <p class="header"> {{ item.name }} {{ item.screen_name }} <span class="date">{{ item. date }}</span></p>
+                    <p>{{ item.text }}</p>
+                </li>
+            </a>
+            <hr align="center">
+        {% endfor %}
+    </ul>
+</div>
+<div class="buttons">
+    {% if page > 1 %} <a class="back" href="http://localhost:5000/tweets/page/{{ page-1 }}">Back</a>{% endif %}
+    {% if page < total %} <a class="next" href="http://localhost:5000/tweets/page/{{ page+1 }}">Next</a>{% endif %}
+</div>
+
+</body>
+</html>

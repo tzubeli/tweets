@@ -1,0 +1,9 @@
+{
+  "auth_url": "https://api.twitter.com/oauth2/token",
+  "search_url": "https://api.twitter.com/1.1/search/tweets.json",
+  "consumer_key": "XXXXXXX",
+  "consumer_secret": "XXXXXXXX",
+  "hashtag": "telaviv",
+  "tweet_count": 100,
+  "page_limit": 20
+}
